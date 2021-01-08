@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { PagesComponent } from './pages.component';
 import { SharedModule } from '../shared/shared.module';
@@ -10,6 +11,8 @@ import { RegistroClienteComponent } from './registro-cliente/registro-cliente.co
 import { ListaClientesComponent } from './lista-clientes/lista-clientes.component';
 import { ActualizacionClientesComponent } from './actualizacion-clientes/actualizacion-clientes.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DetalleClienteComponent } from './detalle-cliente/detalle-cliente.component';
 
 
 
@@ -21,6 +24,7 @@ import { PerfilComponent } from './perfil/perfil.component';
     ActualizacionClientesComponent,
     PerfilComponent,
     PagesComponent,
+    DetalleClienteComponent,
   ],
   exports: [
     DashboardComponent,
@@ -33,7 +37,10 @@ import { PerfilComponent } from './perfil/perfil.component';
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class PagesModule { }

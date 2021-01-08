@@ -1,1 +1,82 @@
-<p>registro-cliente works!</p>
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">En el siguiente formulario puede crear cuentas para clientes nuevos</h4>
+        <h6 class="card-subtitle">Una vez creada la cuenta, se notificará vía correo electrónico al cliente.</h6>
+        
+        <form class="floating-labels m-t-40" [formGroup]="regisFormCliente" (submit)="registrarCliente()">
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group m-b-40 focused">
+                <input type="text" formControlName="nombre" class="form-control">
+                <span class="bar"></span>
+                <label for="input1">Nombre completo</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group m-b-40 focused">
+                <input type="email" formControlName="email" class="form-control">
+                <span class="bar"></span>
+                <label for="input3">E-mail</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group m-b-40 focused">
+                <input type="text" formControlName="telefono" class="form-control">
+                <span class="bar"></span>
+                <label for="input3">Teléfono</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group m-b-40 focused">
+                <input type="date" formControlName="fechanaci" class="form-control">
+                <span class="bar"></span>
+                <small>Fecha de nacimiento</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group m-b-40 focused">
+                <input type="text" formControlName="compania" class="form-control" id="input5">
+                <span class="bar"></span>
+                <label for="input3">Nombre Compañía</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="checkbox checkbox-info pull-left p-t-0">
+                <input id="checkbox-signup" formControlName="estado" type="checkbox" class="filled-in chk-col-light-blue">
+                <label for="checkbox-signup">Cliente Activo </label><br><br>
+                <h6>Por defecto la cuenta del cliente debe ser activa. </h6>
+              </div> 
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <button type="submit" class="btn waves-effect waves-light btn-rounded btn-success btn-block">Registrar Cliente</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col text-danger">
+              <p *ngIf="campoNoValido('nombre')">*El nombre es obligatorio.</p>
+              <p *ngIf="campoNoValido('email')">*El E-mail es obligatorio y valido.</p>
+              <p *ngIf="campoNoValido('telefono')">*El teléfono es obligatorio.</p>
+              <p *ngIf="campoNoValido('compania')">*El nombre de la compañía es obligatorio.</p>
+              <p *ngIf="campoNoValido('fechanaci')">*La fecha de nacimiento es obligatoria.</p>
+            </div>
+          </div>
+      
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

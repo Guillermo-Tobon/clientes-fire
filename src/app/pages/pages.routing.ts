@@ -7,6 +7,7 @@ import { RegistroClienteComponent } from './registro-cliente/registro-cliente.co
 import { ListaClientesComponent } from './lista-clientes/lista-clientes.component';
 import { ActualizacionClientesComponent } from './actualizacion-clientes/actualizacion-clientes.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { DetalleClienteComponent } from './detalle-cliente/detalle-cliente.component';
 
 const routes: Routes = [
   { 
@@ -16,7 +17,8 @@ const routes: Routes = [
       { path: 'perfil', component: PerfilComponent },
       { path: 'registro-cliente', component: RegistroClienteComponent },
       { path: 'lista-clientes', component: ListaClientesComponent },
-      { path: 'actualizacion-clientes', component: ActualizacionClientesComponent }
+      { path: 'actualizacion-clientes/:cliente', component: ActualizacionClientesComponent },
+      { path: 'detalle-cliente/:cliente', component: DetalleClienteComponent },
     ]
   },  
 ];

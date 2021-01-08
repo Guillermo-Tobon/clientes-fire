@@ -111,4 +111,8 @@ User card page
     .el-element-overlay .el-card-item .el-overlay-1:hover .scrl-up {
       top: 0px;
       height: 100%; }
+
+.iconLink{
+  cursor: pointer;
+}
   
