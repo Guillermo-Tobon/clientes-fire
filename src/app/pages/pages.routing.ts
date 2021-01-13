@@ -8,10 +8,12 @@ import { ListaClientesComponent } from './lista-clientes/lista-clientes.componen
 import { ActualizacionClientesComponent } from './actualizacion-clientes/actualizacion-clientes.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { DetalleClienteComponent } from './detalle-cliente/detalle-cliente.component';
+import { AuthGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
   { 
     path: 'dashboard', component: PagesComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: '', component: DashboardComponent },
       { path: 'perfil', component: PerfilComponent },
