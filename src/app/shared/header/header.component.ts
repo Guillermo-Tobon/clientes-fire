@@ -19,7 +19,27 @@ export class HeaderComponent implements OnInit {
 
     this.usuario = this.autServ.usuario;
 
+    this.alertBienvenida(this.usuario[0].nombres);
+
   }
+
+  /**
+   * Método de mensaje
+   * @param nombre => Nombre del usuario
+   */
+  public alertBienvenida = (nombre:string) =>{
+    const ingresado = localStorage.getItem('Ingresado') || '';
+    if( ingresado === 'Si' ){
+      Swal.fire({
+        icon: 'success',
+        title: `Bienvenido(a) ${nombre}`,
+        showConfirmButton: false,
+        timer: 2500
+      });
+      localStorage.removeItem('Ingresado');
+    }
+  }
+
 
   /**
    * Método para cerrar sesión user

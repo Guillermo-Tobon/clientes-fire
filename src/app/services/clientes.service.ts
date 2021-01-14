@@ -16,7 +16,7 @@ export class ClientesService {
 
   constructor( private http: HttpClient ) { 
     
-    this.httpOptions = { headers: new HttpHeaders({ 'Content-Type':  'application/json', 'x-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJtZW1vQGhvdG1haWwuY29tIiwiaWF0IjoxNjEwMTIwNDA5LCJleHAiOjE2MTAxNjM2MDl9.zUjEEaCdqrAgBNs1OaGAY8WjA1eSsQHQxtyNCq614Ro'}) };
+    this.httpOptions = { headers: new HttpHeaders({ 'Content-Type':  'application/json', 'x-token': localStorage.getItem('token')}) };
 
   }
 
@@ -33,7 +33,7 @@ export class ClientesService {
       telefono: formData.telefono,
       fechanaci: formData.fechanaci,
       compania: formData.compania,
-      estado: formData.estado == true? 1 : 0 
+      estado: formData.estado === true? 1 : 0 
     }
 
     return this.http.post(`${BASE_URL}/insertCliente`, json, this.httpOptions).pipe(
@@ -49,6 +49,29 @@ export class ClientesService {
 
     return this.http.get<FormCliente>(`${BASE_URL}/clientes`, this.httpOptions ).pipe(
       map( ( (data) => data ) )
+    )
+  }
+
+
+
+  /**
+   * Método de servicio para actualizar el cliente
+   * @param formData => Datos del formulario
+   */
+  public updateClienteService = (formData:FormCliente) =>{
+
+    const json = {
+      id: formData.id,
+      nombre: formData.nombre,
+      email: formData.email,
+      telefono: formData.telefono,
+      fechanaci: formData.fechanaci,
+      compania: formData.compania,
+      estado: formData.estado === true? 1: 0 
+    }
+  
+    return this.http.put(`${BASE_URL}/updateCliente`, json, this.httpOptions).pipe(
+      map( resp => resp )
     )
   }
 

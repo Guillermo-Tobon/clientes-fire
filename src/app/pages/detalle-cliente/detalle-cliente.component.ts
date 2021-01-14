@@ -44,9 +44,14 @@ export class DetalleClienteComponent implements OnInit {
    */
   public validarCumpleanos = (fechaNaci:any, fechaHoy:any) =>{
     fechaNaci = fechaNaci.split('T');
+    let fechaNaciNew = fechaNaci[0].split('-')
+    fechaNaciNew = `${fechaNaciNew[1]}-${fechaNaciNew[2]}`;
+    
     fechaHoy = fechaHoy.split('T');
+    let fechaHoyNew = fechaHoy[0].split('-');
+    fechaHoyNew = `${fechaHoyNew[1]}-${fechaHoyNew[2]}`;
 
-    if (fechaNaci[0] === fechaHoy[0]) {
+    if ( fechaNaciNew === fechaHoyNew ) {
       this.mensajeCumple = 'Hoy es su cumpleaños!!'; 
     }
   }

@@ -18,9 +18,9 @@
       <div class="card-body"> 
         <small class="text-muted">E-mail</small>
         <h6>{{cliente.email_cli}}</h6> 
-        <small class="text-muted p-t-30 db">Teléfono</small>
-        <h6>{{cliente.telefono_cli}}</h6> 
-        <small class="text-muted p-t-30 db">Social Profile</small>
+        <small class="text-muted p-t-30 db">Fecha de registro</small>
+        <h6>{{cliente.fechareg_cli | date: 'dd/MM/yyyy'}}</h6> 
+        <small class="text-muted p-t-30 db">Perfil en redes sociales</small>
         <br>
         <button class="btn btn-circle btn-secondary"><i class="fa fa-facebook"></i></button>
         <button class="btn btn-circle btn-secondary"><i class="fa fa-twitter"></i></button>
