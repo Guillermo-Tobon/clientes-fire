@@ -6,7 +6,9 @@
     <div *ngFor="let cliente of dataClientes; let i = index;" class="col-lg-3 col-md-6">
       <div class="card">
         <div class="el-card-item">
-          <div class="el-card-avatar el-overlay-1"> <img src="./assets/images/users/1.jpg" alt="user">
+          <div class="el-card-avatar el-overlay-1">
+            <img src="./assets/images/users/1.jpg" alt="user">
+            <span class="estadoCli" *ngIf="cliente.estado_cli === 0">Inactivo</span>
             <div class="el-overlay">
               <ul class="el-info">
                 <li><a class="btn default btn-outline iconLink" (click)="verDetalleCliente(cliente)"><i class="icon-link"></i></a></li>

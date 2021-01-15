@@ -5,5 +5,6 @@ export interface FormCliente{
   telefono:String;
   fechanaci:String;
   compania:String;
+  descripcion:String;
   estado:boolean;
 }

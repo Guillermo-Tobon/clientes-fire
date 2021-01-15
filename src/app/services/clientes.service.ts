@@ -33,6 +33,7 @@ export class ClientesService {
       telefono: formData.telefono,
       fechanaci: formData.fechanaci,
       compania: formData.compania,
+      descripcion: formData.descripcion,
       estado: formData.estado === true? 1 : 0 
     }
 
@@ -67,6 +68,7 @@ export class ClientesService {
       telefono: formData.telefono,
       fechanaci: formData.fechanaci,
       compania: formData.compania,
+      descripcion: formData.descripcion,
       estado: formData.estado === true? 1: 0 
     }
   

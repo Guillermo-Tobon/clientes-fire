@@ -75,6 +75,7 @@ export class ActualizacionClientesComponent implements OnInit {
       email: [cliente['email_cli'], [Validators.required, Validators.email, Validators.minLength(6)]],
       telefono: [cliente['telefono_cli'], [Validators.required, Validators.minLength(6)]],
       compania: [cliente['compania_cli'], [Validators.required, Validators.minLength(5)]],
+      descripcion: [cliente['descripcion_cli'], [Validators.required, Validators.minLength(20)]],
       fechanaci: [cumple[0], [Validators.required]],
       estado: [cliente['estado_cli'] === 1? true : false, [Validators.required, Validators.minLength(5)]],
       id: [cliente['id_cli'], [Validators.required, Validators.minLength(5)]],

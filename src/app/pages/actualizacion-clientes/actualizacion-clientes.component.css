@@ -148,3 +148,9 @@ File: scss
   color: #ffb22b; }
   .form-group.issue .help-block ul li {
     list-style: none; }
+
+
+.btnActualizar{
+  width: 50%;
+  margin-right: 15px;
+}

@@ -18,6 +18,7 @@ export class RegistroClienteComponent implements OnInit {
     email: ['', [Validators.required, Validators.email, Validators.minLength(6)]],
     telefono: ['', [Validators.required, Validators.minLength(6)]],
     compania: ['', [Validators.required, Validators.minLength(5)]],
+    descripcion: ['', [Validators.required, Validators.minLength(20)]],
     fechanaci: ['', [Validators.required]],
     estado: [true, [Validators.required]],
   });
