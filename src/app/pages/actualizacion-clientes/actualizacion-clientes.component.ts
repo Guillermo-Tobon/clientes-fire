@@ -45,7 +45,7 @@ export class ActualizacionClientesComponent implements OnInit {
     this.clienteServ.updateClienteService(this.updateFormCliente.value).subscribe( (resp:any) =>{
 
       if(resp.ok){
-        Swal.fire('Bien Hecho!', `Cliente ${this.updateFormCliente.get('nombre').value } actualizado con éxito.`, 'error');
+        Swal.fire('Bien Hecho!', `Cliente ${this.updateFormCliente.get('nombre').value } actualizado con éxito.`, 'success');
         setTimeout(() => { this.router.navigate(['dashboard/lista-clientes']) }, 2000);
 
       } else {

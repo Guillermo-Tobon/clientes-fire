@@ -15,12 +15,12 @@ const routes: Routes = [
     path: 'dashboard', component: PagesComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: '', component: DashboardComponent },
-      { path: 'perfil', component: PerfilComponent },
-      { path: 'registro-cliente', component: RegistroClienteComponent },
-      { path: 'lista-clientes', component: ListaClientesComponent },
-      { path: 'actualizacion-clientes/:cliente', component: ActualizacionClientesComponent },
-      { path: 'detalle-cliente/:cliente', component: DetalleClienteComponent },
+      { path: '', component: DashboardComponent, data: {titulo: 'Dashboard'} },
+      { path: 'perfil', component: PerfilComponent, data: {titulo: 'Perfil'} },
+      { path: 'registro-cliente', component: RegistroClienteComponent, data: {titulo: 'Registro de Clientes'} },
+      { path: 'lista-clientes', component: ListaClientesComponent, data: {titulo: 'Lista de Clientes'} },
+      { path: 'actualizacion-clientes/:cliente', component: ActualizacionClientesComponent, data: {titulo: 'Actualización Clientes'} },
+      { path: 'detalle-cliente/:cliente', component: DetalleClienteComponent, data: {titulo: 'Detalle de Cliente'} },
     ]
   },  
 ];

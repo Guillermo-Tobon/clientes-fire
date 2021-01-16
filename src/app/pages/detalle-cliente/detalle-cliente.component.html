@@ -4,7 +4,7 @@
   <div class="col-lg-4 col-xlg-3 col-md-5">
     <div class="card">
       <div class="card-body">
-        <div class="m-t-30 cardCliente"> <img src="../assets/images/users/5.jpg" class="img-circle" width="150">
+        <div class="m-t-30 cardCliente"> <img src="https://fireagencia.com/multimedia/img/avatar.png" class="img-circle" width="150">
           <h4 class="card-title m-t-10">{{cliente.nombre_cli}}</h4>
           <h6 class="card-subtitle">{{cliente.compania_cli}}</h6>
           <div class="row text-center justify-content-md-center">
@@ -58,7 +58,7 @@
             <h6 class="text-warning">{{estado}}</h6> 
 
             <button type="button" (click)="irActualizarCliente(cliente)" class="btn waves-effect waves-light btn-rounded btn-info">Actualizar Cliente</button> &nbsp;
-            <button type="button" class="btn waves-effect waves-light btn-rounded btn-warning">Enviar E-mail</button> &nbsp;
+            <button *ngIf=" mensajeCumple != '' " type="button" class="btn waves-effect waves-light btn-rounded btn-warning">Enviar E-mail</button> &nbsp;
             <button type="button" (click)="volverListaClientes()" class="btn waves-effect waves-light btn-rounded btn-danger">Volver a la lista</button>
 
           </div>
